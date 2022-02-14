@@ -6,3 +6,11 @@ services:
       - 8529:8529
     environment:
       - ARANGO_ROOT_PASSWORD=openSesame
+      #User root
+  grafana:
+    # image: grafana/grafana-oss
+    build: .
+    ports:
+      - 3000:3000 
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
